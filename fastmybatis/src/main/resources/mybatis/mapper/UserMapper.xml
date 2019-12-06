@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 注意：文件名必须跟Dao类名字一致，因为是根据文件名做关联。 -->
+<mapper>
+
+    <select id="findByName" parameterType="String" resultMap="baseResultMap">
+        select * from user u where u.name = #{name} limit 1
+    </select>
+
+    <!--<select id="findByMap" parameterType="java.util.Map" resultMap="baseResultMap">-->
+    <!--select * from user u where-->
+    <!--<choose>-->
+    <!--<when test="map.keys.size > 0">-->
+    <!--<foreach collection="map.keys" item="key"-->
+    <!--separator="AND">-->
+    <!--${key} = #{map[${key}]}-->
+    <!--</foreach>-->
+    <!--</when>-->
+    <!--<otherwise>-->
+    <!--1=2-->
+    <!--</otherwise>-->
+    <!--</choose>-->
+    <!--</select>-->
+
+    <!--<select id="getByMap" parameterType="java.util.Map" resultMap="baseResultMap">-->
+    <!--select * from user u where-->
+    <!--<choose>-->
+    <!--<when test="map.keys.size > 0">-->
+    <!--<foreach collection="map.keys" item="key"-->
+    <!--separator="AND">-->
+    <!--${key} = #{map[${key}]}-->
+    <!--</foreach>-->
+    <!--LIMIT 1-->
+    <!--</when>-->
+    <!--<otherwise>-->
+    <!--1=2-->
+    <!--</otherwise>-->
+    <!--</choose>-->
+    <!--</select>-->
+
+
+    <!--<select id="findJoinPage"-->
+    <!--parameterType="com.gitee.fastmybatis.core.query.Pageable"-->
+    <!--resultMap="baseResultMap">-->
+    <!--SELECT u.*,u2.city,u2.address-->
+    <!--FROM user u LEFT JOIN order o ON u.id = o.user_id-->
+    <!--<include refid="common.where" />-->
+    <!--<include refid="common.orderBy" />-->
+    <!--<include refid="common.limit" />-->
+    <!--</select>-->
+
+</mapper>

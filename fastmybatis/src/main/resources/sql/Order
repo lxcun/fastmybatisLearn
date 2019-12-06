@@ -1,0 +1,7 @@
+CREATE TABLE `order` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `goods` varchar(255) DEFAULT NULL COMMENT '商品名',
+  `price` float(11) DEFAULT NULL COMMENT '价格',
+  `user_id` int(11) NOT NULL COMMENT '外键用户ID',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='订单表'
